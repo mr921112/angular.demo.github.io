@@ -1,0 +1,35 @@
+<div  ng-controller="productMain">
+			<!--一行就一个row -->
+			<div class="row">
+				<div class="col-md-3">
+					<button class="btn btn-lg btn-block btn-primary" ng-click="findCategory('全部')" ng-class="classOfCategory('全部')">全部</button>
+					<button class="btn btn-lg btn-block btn-default" ng-repeat="p in product | unique:'category'" ng-click="findCategory(p.category)"  ng-class="classOfCategory(p.category)">
+						{{p.category}}</button>
+					<!--<button class="btn btn-lg btn-block btn-default">足球</button>
+					<button class="btn btn-lg btn-block btn-default">乒乓球拍</button>
+					<button class="btn btn-lg btn-block btn-default">羽毛球拍</button>-->
+				</div>
+				<div class="col-md-9">
+					<div class="well well-lg" ng-repeat="p in pagePerducts">
+						<h3>{{p.name}}<span class="pull-right label label-primary">{{p.price|currency:"$"}}</span></h3>
+						<a href=""  class="pull-right btn btn-success" ng-click="addToCar()">加入购物车</a>
+						<p class="lead">{{p.description}}</p>
+					</div>
+				<!--<nav>
+				  <ul class="pagination">
+				    <li><a href="#">&laquo;</a></li>
+				    <li class="active"><a href="#">1</a></li>
+				    <li><a href="#">2</a></li>
+				    <li><a href="#">3</a></li>
+				    <li><a href="#">4</a></li>
+				    <li><a href="#">5</a></li>
+				    <li><a href="#">&raquo;</a></li>
+				  </ul>
+				</nav>-->
+					<div class="pull-right btn-group">
+						<button class="btn btn-default" ng-repeat="p in pageArray" ng-click="productsPerPage(p)" ng-class="classOfPage(p)">{{p}}</button>
+					</div>
+				</div>
+				
+			</div>
+		</div>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="shop">
+	<head>
+		<meta charset="utf-8">
+		<title>商店</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+		<script src="js/angular.js"></script>
+		<script src="js/angular-route.js"></script>
+		<!--<style type="text/css">
+		#xxx{
+			outline: none;
+		}
+		</style>-->
+	</head>
+	<body class="container-fluid">
+		<div role="navigation" class="navbar navbar-inverse">
+			<a href="#" class="navbar-brand">导航</a>
+			<div class="pull-right navbar-text">
+				你的购物车{{Number}}件,{{sumPrice|currency:"$"}}
+				<a href="#" class="btn btn-sm btn-default">查看</a>
+			</div>
+		</div>
+		<ng-view></ng-view>	
+	</body>
+</html>
+<script src="js/custom.js"></script>
+<script type="text/javascript" src="js/min.js"></script>
